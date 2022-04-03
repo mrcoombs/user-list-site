@@ -8,8 +8,14 @@ h1{
     font-style: bold;
 }
 
+.msg{
+    text-align: center;
+    color: red;
+    font-size: 20px;
+}
+
 #submission-box{
-    position: fixed;
+    position: relative;
     left: 50%;
     transform: translate(-50%, 0%);
     box-sizing: border-box;
@@ -17,6 +23,7 @@ h1{
     border: solid;
     padding: 5px 25px 25px 25px;
     background-color: lightgray;
+    width: 300px;
 }
 
 #submission-box h2{
@@ -28,6 +35,11 @@ h1{
     padding-left: 15px;
 }
 
-#submission-box button{
+#submission-box .btn{
     margin-top: 15px;
+}
+
+ul{
+    text-align: center;
+    list-style-type: none;
 }

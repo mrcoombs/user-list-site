@@ -8,9 +8,10 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <header><h1>User List Site</h1></header>
+    <header><h1>User List Site</h1></header>  
     <div id="submission-box">
         <h2>Add User</h2>
+        <div class="msg"></div>
         <form>
             <div class="input">
                 <label for="name">Name:</label>
@@ -20,13 +21,13 @@
                 <label for="email">Email:</label>
                 <input type="email" name="Email:" id="email">  
             </div>
-            
-            
+            <input class="btn" type="submit" value="Submit">
         </form>
-        <button>Submit</button>
+        
     </div>
 
     <ul id="users"></ul>
     
+    <script src="main.js"></script>
 </body>
 </html>
