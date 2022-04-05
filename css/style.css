@@ -39,7 +39,15 @@ h1{
     margin-top: 15px;
 }
 
-ul{
+.output-table{
+    margin-top: 20px;
+    width: 600px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    box-sizing: border-box;
+}
+
+.output-table tr{
     text-align: center;
-    list-style-type: none;
 }
