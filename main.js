@@ -7,10 +7,12 @@ const tableName = document.querySelector('.table-name');
 const tableEmail = document.querySelector('.table-email');
 const outputTable = document.querySelector('.output-table');
 const body = document.querySelector('body');
-let isTableHeader = false; 
+let isTableHeader = false;
+let increment = 1;
 
 myForm.addEventListener('submit', onSubmit); //listener for submit button
 
+//Function to add user to list
 function onSubmit(e){
     e.preventDefault();
     
@@ -44,6 +46,8 @@ function onSubmit(e){
 
         //Add record to table
         const tr = document.createElement('tr');
+        tr.className = "table-row" + increment;
+        console.log(tr.className);
         const tdName = document.createElement('td');
         const tdEmail = document.createElement('td');
         tdName.appendChild(document.createTextNode(`${nameInput.value}`));
@@ -56,22 +60,27 @@ function onSubmit(e){
         const tdImage = document.createElement("td");
         const img = document.createElement("img");
         img.src="./image/trash.png";
-        //console.log(tdImage.cellIndex);
-        img.onclick= function() {deleteUser();};
         img.className="delete-button";
         tdImage.appendChild(img);
         tr.appendChild(tdImage);
+
+        //Create onclick function for delete button and pass in the table row
+        img.onclick= function() {deleteUser(tr);};
 
         outputTable.appendChild(tr);
 
         //Clear fields
         nameInput.value = '';
         emailInput.value = '';
+
+        //Increment Row
+        increment++;
     }
 }
 
+//Function to remove user from list
 function deleteUser(e){
-    console.log('Success');
-    //console.log(e);
-    //outputTable.deleteRow(1);
+    //
+    let deleteRow = document.querySelector('.'+e.className);
+    deleteRow.parentNode.removeChild(deleteRow);
 }
